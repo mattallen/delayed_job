@@ -142,7 +142,7 @@ module Delayed
         find(:all, :conditions => conditions, :order => NextTaskOrder, :limit => limit)
       end
 
-      records.sort_by { rand() }
+      records # removed this, so they are sorted in order  .sort_by { rand() }
     end
 
     # Run the next job we can get an exclusive lock on.
